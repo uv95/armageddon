@@ -1,0 +1,12 @@
+.earth {
+    width: 400px;
+    height: 620px;
+    background-color: aqua;
+    position: relative;
+    align-self: start;
+    /* top: 138px;
+    left: -136px; */
+}
+
+.image {
+}
