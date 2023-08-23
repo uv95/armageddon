@@ -1,6 +1,6 @@
 import { useOrderContext } from "@/context/OrderContext";
 import { Actions } from "@/context/types";
-import { IAsteroid } from "@/utils/api";
+import { IAsteroid } from "@/utils/asteroidType";
 import { Button, ButtonSize, ButtonTextColor, ButtonTheme } from "../Button/Button";
 
 interface OrderButtonProps {

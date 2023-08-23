@@ -1,4 +1,4 @@
-import { DistanceUnit, IAsteroid } from '@/utils/api';
+import { DistanceUnit, IAsteroid } from '@/utils/asteroidType';
 import { AsteroidCard } from '../AsteroidCard/AsteroidCard';
 import style from './OrderPlaced.module.css';
     

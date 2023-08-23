@@ -1,4 +1,4 @@
-import { DistanceUnit, IAsteroid } from '@/utils/api';
+import { DistanceUnit, IAsteroid } from '@/utils/asteroidType';
 import { SetStateAction } from 'react';
 import { AsteroidCard } from '../AsteroidCard/AsteroidCard';
 import style from './ClosestAsteroids.module.css';

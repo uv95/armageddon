@@ -1,0 +1,6 @@
+.approach {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: rgba(255, 255, 255, 0.062);
+    padding: 8px;
+}

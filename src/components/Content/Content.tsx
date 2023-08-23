@@ -1,9 +1,8 @@
 'use client'
 
 import { useOrderContext } from '@/context/OrderContext';
-import { DistanceUnit, getAsteroids, IAsteroid } from '@/utils/api';
-import { useEffect, useState } from 'react';
-import { AsteroidCard } from '../AsteroidCard/AsteroidCard';
+import { DistanceUnit, IAsteroid } from '@/utils/asteroidType';
+import { useState } from 'react';
 import { ClosestAsteroids } from '../ClosestAsteroids/ClosestAsteroids';
 import { OrderPlaced } from '../OrderPlaced/OrderPlaced';
 import style from './Content.module.css';
@@ -16,7 +15,6 @@ export const Content = ({asteroids }: ContentProps) => {
     const [distanceUnit, setDistanceUnit] = useState<DistanceUnit>(DistanceUnit.KM);
     const {state} = useOrderContext();
     const orderedAsteroids = state.ordered;
-    const cart = state.cart;
 
     return (
         <div className={style.content}>

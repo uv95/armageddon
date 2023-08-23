@@ -1,7 +1,10 @@
-.asteroidCard {
+
+.main {
 display: flex;
 flex-direction: column;
 gap: 8px;
+cursor: pointer;
+margin-bottom: 8px;
 }
 
 .info {
@@ -33,9 +36,14 @@ align-items: center;
     text-decoration: underline;
 }
 
-.order {
+.bottom {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.isDangerous{
+    cursor: default;
+    pointer-events: none;
 }
 

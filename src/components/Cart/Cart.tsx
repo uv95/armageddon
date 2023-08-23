@@ -8,6 +8,9 @@ import style from './Cart.module.css';
 export const Cart = () => {
     const {state, dispatch} = useOrderContext()
     const orderedAsteroidsNum = state.cart.length
+    const isOrderPlaced = state.ordered.length > 0;
+
+    if(isOrderPlaced) return null;
 
     return (
         <div className={style.cart}>
