@@ -1,0 +1,41 @@
+.asteroidCard {
+display: flex;
+flex-direction: column;
+gap: 8px;
+}
+
+.info {
+display: flex;
+gap: 8px;
+align-items: center;
+}
+
+.date {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.distance {
+    width: fit-content;
+    height: 32px;
+    position: relative;
+}
+
+.arrow {
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    bottom: 0;
+}
+
+.name {
+    text-decoration: underline;
+}
+
+.order {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+

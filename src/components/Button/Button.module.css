@@ -1,0 +1,42 @@
+.button {
+    border: none;
+    outline: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.medium {
+    padding: 2px 11px;
+    border-radius: 16px;
+    font-size: 11px;
+    line-height: 20px;
+    letter-spacing: 1px;
+}
+
+.large {
+    padding: 8px 16px;
+    border-radius: 40px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.brown {
+    color: var(--color-orange);
+    background-color: var(--color-brown);
+}
+
+.brown:hover {
+    color: white;
+    background-color: var(--color-orange);
+}
+
+.orange {
+    color: white;
+    background-color: var(--color-orange);
+}
+
+.orange:hover {
+    opacity: 0.9;
+}
+
+
