@@ -1,4 +1,4 @@
-import { useOrderedAsteroidsContext } from "@/context/OrderedAsteroidsContext";
+import { useOrderContext } from "@/context/OrderContext";
 import { Actions } from "@/context/types";
 import { IAsteroid } from "@/utils/api";
 import { Button, ButtonSize, ButtonTextColor, ButtonTheme } from "../Button/Button";
@@ -8,9 +8,9 @@ interface OrderButtonProps {
 }
     
 export const OrderButton = ({ asteroid}: OrderButtonProps) => {
-    const {state, dispatch} = useOrderedAsteroidsContext()
-    const isOrdered = (asteroid:IAsteroid) => !!state.orderedAsteroids.find(item => item.id === asteroid.id)
-    
+    const {state, dispatch} = useOrderContext()
+    const isOrdered = (asteroid:IAsteroid) => !!state.cart.find(item => item.id === asteroid.id)
+
     return (
         <Button 
             size={ButtonSize.M} 

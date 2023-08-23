@@ -1,7 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { OrderedAsteroidsProvider } from '@/context/OrderedAsteroidsContext'
+import { OrderProvider } from '@/context/OrderContext'
 import { Header } from '@/components/Header/Header'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -18,11 +18,11 @@ export default function RootLayout({
 }) {
     return (
         <html lang="ru">
-            <OrderedAsteroidsProvider>
+            <OrderProvider>
                 <body className={inter.className}>
                     <Header/>
                     {children}</body>
-            </OrderedAsteroidsProvider>
+            </OrderProvider>
         </html>
     )
 }

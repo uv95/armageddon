@@ -1,12 +1,13 @@
 'use client'
-import { useOrderedAsteroidsContext } from '@/context/OrderedAsteroidsContext';
+import { useOrderContext } from '@/context/OrderContext';
+import { Actions } from '@/context/types';
 import { modifyWord } from '@/utils/numbersDeclension';
 import { Button, ButtonSize, ButtonTextColor, ButtonTheme } from '../Button/Button';
 import style from './Cart.module.css';
     
 export const Cart = () => {
-    const {state} = useOrderedAsteroidsContext()
-    const orderedAsteroidsNum = state.orderedAsteroids.length
+    const {state, dispatch} = useOrderContext()
+    const orderedAsteroidsNum = state.cart.length
 
     return (
         <div className={style.cart}>
@@ -14,7 +15,9 @@ export const Cart = () => {
                 <strong>Корзина</strong>
                 <p>{orderedAsteroidsNum} {modifyWord(orderedAsteroidsNum, ["астероид", "астероида", "астероидов"])}</p>
             </div>
-            <Button theme={ButtonTheme.ORANGE} size={ButtonSize.L} textColor={ButtonTextColor.LIGHT}>Отправить</Button>
+            <Button theme={ButtonTheme.ORANGE} size={ButtonSize.L} textColor={ButtonTextColor.LIGHT}
+                onClick={() => dispatch({type: Actions.PLACE_ORDER})}
+            >Отправить</Button>
         </div>
     );
 };

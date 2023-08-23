@@ -21,7 +21,6 @@
 }
 
 .brown {
-    color: var(--color-orange);
     background-color: var(--color-brown);
 }
 
@@ -37,6 +36,13 @@
 
 .orange:hover {
     opacity: 0.9;
+}
+
+.text_light {
+    color: var(--color-font--light);
+}
+.text_orange {
+    color: var(--color-orange);
 }
 
 

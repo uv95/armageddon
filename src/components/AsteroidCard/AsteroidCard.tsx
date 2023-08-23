@@ -8,10 +8,11 @@ import style from './AsteroidCard.module.css';
 
 interface AsteroidCardProps {
     asteroid: IAsteroid,
-    distanceUnit: DistanceUnit
+    distanceUnit: DistanceUnit,
+    isOrdered?: boolean
 }
     
-export const AsteroidCard = ({ asteroid, distanceUnit}: AsteroidCardProps) => {
+export const AsteroidCard = ({ asteroid, distanceUnit, isOrdered}: AsteroidCardProps) => {
 
     return (
         <div className={style.asteroidCard}>
@@ -30,7 +31,7 @@ export const AsteroidCard = ({ asteroid, distanceUnit}: AsteroidCardProps) => {
                 </div>
             </div>
             <div className={style.order}>
-                <OrderButton asteroid={asteroid}/>
+                {!isOrdered && <OrderButton asteroid={asteroid}/>}
                 {asteroid.isDangerous && <p>⚠️ Опасен</p>}
             </div>
         </div>
