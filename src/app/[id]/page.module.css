@@ -33,3 +33,33 @@
   top: 0;
 }
 
+@media(width <= 800px) {
+  .listHeader strong:nth-of-type(2),
+  .listHeader strong:nth-of-type(3),
+  .listHeader strong:nth-of-type(4) {
+      text-align: right;
+  }
+
+}
+@media(width <= 700px) {
+  .listHeader {
+    grid-template-columns: 2fr 3fr 4fr 2fr;
+  }
+
+}
+
+@media(width <= 600px) {
+  .listHeader{
+    font-size: 12px;
+    width: calc(32px + 100%);
+    transform: translateX(-16px);
+    gap: 5px;
+  }
+}
+
+@media(width <= 480px) {
+  .listHeader{
+    font-size: 10px;
+  }
+}
+

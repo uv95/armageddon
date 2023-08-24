@@ -19,8 +19,8 @@ export default async function Asteroid({params}:{params: {id: string}}) {
                         <h2>Все сближения:</h2>
                         <div className={style.listHeader}>
                             <strong>🕑 Точное время</strong>
-                            <strong>⚡︎ Скорость</strong>
-                            <strong>🌎 Расстояние до Земли</strong>
+                            <strong>⚡︎ Скорость (км/ч)</strong>
+                            <strong>🌎 Расстояние до Земли (м)</strong>
                             <strong>💫 Орбита</strong>
                         </div>
                         { 

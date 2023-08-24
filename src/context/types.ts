@@ -1,4 +1,4 @@
-import { IAsteroid } from "@/utils/api";
+import { IAsteroid } from "@/utils/asteroidType";
 import { Dispatch } from "react";
 
 export interface IState {

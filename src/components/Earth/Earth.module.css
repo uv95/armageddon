@@ -1,12 +1,42 @@
 .earth {
-    width: 400px;
+    width: 435px;
     height: 620px;
-    background-color: aqua;
+    transform: translateX(-35px);
     position: relative;
     align-self: start;
-    /* top: 138px;
-    left: -136px; */
+    position: sticky;
+    top: 84px;
 }
 
-.image {
+@media(width <= 1024px) {
+    .earth {
+        transform: translateX(0);
+        width: 330px;
+        height: 436px;
+    }
+}
+
+@media(width <= 900px) {
+    .earth {
+        transform: translateX(-100px);
+    }
+}
+
+@media(width <= 800px) {
+    .earth {
+        transform: translateX(-190px);
+    }
+}
+
+@media(width <= 700px) {
+    .earth {
+        transform: translateX(-250px);
+    }
+}
+
+@media(width <= 600px) {
+    .earth {
+        transform: translateX(-282px);
+        top: 115px;
+    }
 }

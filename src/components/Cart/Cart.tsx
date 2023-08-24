@@ -13,14 +13,28 @@ export const Cart = () => {
     if(isOrderPlaced) return null;
 
     return (
-        <div className={style.cart}>
-            <div>
-                <strong>Корзина</strong>
-                <p>{orderedAsteroidsNum} {modifyWord(orderedAsteroidsNum, ["астероид", "астероида", "астероидов"])}</p>
+        <>
+            <div className={style.desktop}>
+                <div>
+                    <strong>Корзина</strong>
+                    <p>{orderedAsteroidsNum} {modifyWord(orderedAsteroidsNum, ["астероид", "астероида", "астероидов"])}</p>
+                </div>
+                <Button theme={ButtonTheme.ORANGE} size={ButtonSize.L} textColor={ButtonTextColor.LIGHT}
+                    onClick={() => dispatch({type: Actions.PLACE_ORDER})}
+                >Отправить</Button>
             </div>
-            <Button theme={ButtonTheme.ORANGE} size={ButtonSize.L} textColor={ButtonTextColor.LIGHT}
-                onClick={() => dispatch({type: Actions.PLACE_ORDER})}
-            >Отправить</Button>
-        </div>
+          
+       
+            <div className={style.mobile}>
+                <div>
+                    <strong>Корзина</strong>
+                    <p>{orderedAsteroidsNum} {modifyWord(orderedAsteroidsNum, ["астероид", "астероида", "астероидов"])}</p>
+                </div>
+                <Button theme={ButtonTheme.ORANGE} size={ButtonSize.L} textColor={ButtonTextColor.LIGHT}
+                    onClick={() => dispatch({type: Actions.PLACE_ORDER})}
+                >Отправить</Button>
+            </div>
+           
+        </>
     );
 };

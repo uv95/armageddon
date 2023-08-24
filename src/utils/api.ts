@@ -1,29 +1,11 @@
 import axios from 'axios';
 import { IAsteroid } from './asteroidType';
-import { getCurrentDate } from './getCurrentDate';
+import { formatDate } from './formatDate/formatDate';
 
-const today = getCurrentDate();
-
-const getClosestAsteroidsURL = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${today}&api_key=${process.env.NEXT_PUBLIC_API_KEY}`
-
-const formatDate = (date:string, withTime = false) => {
-    const newDate = new Date(date).toLocaleString('ru-RU', {
-        month: 'short',
-        year: 'numeric',
-        day: 'numeric',
-    }).split('').filter(el => el!=='.').join('').split(' ').filter(el => el!=='г').join(' ')
-
-    const time = new Date(date).toLocaleString('ru-RU', {
-        hour: '2-digit',
-        minute: '2-digit'
-    }) 
-
-    return withTime ? newDate + ', ' + time : newDate
-}
-
-export const getAsteroids = async () => {
+export const getAsteroids = async (startDate: string, endDate: string) => {
     try {
-        const res = await axios.get(getClosestAsteroidsURL)
+        const res = await axios.get(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${endDate}&api_key=${process.env.NEXT_PUBLIC_API_KEY}`)
+
         const asteroids:IAsteroid[] = Object.values(res.data.near_earth_objects).flat(1).map((item:any) => ({
             name: item.name.slice(item.name.indexOf('(') + 1, -1),
             id: item.id,

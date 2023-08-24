@@ -2,6 +2,7 @@ import { DistanceUnit, IAsteroid } from '@/utils/asteroidType';
 import { modifyWord } from '@/utils/numbersDeclension';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { Dispatch, SetStateAction, useEffect, useRef } from 'react';
 import arrow from '../../assets/arrow.png';
 import asteroidImage from '../../assets/asteroid 2@3x.png';
 import { OrderButton } from '../OrderButton/OrderButton';
@@ -10,13 +11,30 @@ import style from './AsteroidCard.module.css';
 interface AsteroidCardProps {
     asteroid: IAsteroid,
     distanceUnit: DistanceUnit,
-    isOrdered?: boolean
+    isOrdered?: boolean,
+    setIntersecting?: Dispatch<SetStateAction<boolean>>,
+    isIntersectionPoint?: boolean
 }
     
-export const AsteroidCard = ({ asteroid, distanceUnit, isOrdered}: AsteroidCardProps) => {
+export const AsteroidCard = ({ asteroid, distanceUnit, isOrdered, setIntersecting, isIntersectionPoint}: AsteroidCardProps) => {
     const router = useRouter()
+    const ref = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => setIntersecting && setIntersecting(entry.isIntersecting)
+        );
+        if (ref.current && isIntersectionPoint) {
+            observer.observe(ref.current);
+        }
+
+        return () => {
+            observer.disconnect();
+        };
+    })
+
     return (
-        <div >
+        <div ref={isIntersectionPoint ? ref : null} >
             <div className={style.main} onClick={() => router.push(`/${asteroid.id}`)}>
                 <div className={style.date}>{asteroid.approachDate}</div>
                 <div className={style.info}>

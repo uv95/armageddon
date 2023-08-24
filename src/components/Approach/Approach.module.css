@@ -4,3 +4,37 @@
     background-color: rgba(255, 255, 255, 0.062);
     padding: 8px;
 }
+
+@media(width <= 1024px) {
+}
+
+@media(width <= 800px) {
+    .approach p:nth-of-type(2),
+    .approach p:nth-of-type(3),
+    .approach p:nth-of-type(4) {
+        justify-self: end;
+    }
+}
+
+@media(width <= 700px) {
+    .approach{
+        grid-template-columns: 2fr 3fr 4fr 2fr;
+    }
+}
+
+@media(width <= 600px) {
+  .approach{
+      font-size: 12px;
+      width: calc(32px + 100%);
+      transform: translateX(-16px)
+  }
+  .approach p:nth-of-type(1){
+    width: 100px;
+}
+}
+
+@media(width <= 480px) {
+  .approach{
+      font-size: 10px;
+  }
+}

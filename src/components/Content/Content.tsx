@@ -1,5 +1,4 @@
 'use client'
-
 import { useOrderContext } from '@/context/OrderContext';
 import { DistanceUnit, IAsteroid } from '@/utils/asteroidType';
 import { useState } from 'react';
@@ -11,7 +10,8 @@ interface ContentProps {
     asteroids?: IAsteroid[]
 }
     
-export const Content = ({asteroids }: ContentProps) => {
+export const Content = ({asteroids}: ContentProps) => {
+   
     const [distanceUnit, setDistanceUnit] = useState<DistanceUnit>(DistanceUnit.KM);
     const {state} = useOrderContext();
     const orderedAsteroids = state.ordered;
