@@ -9,7 +9,7 @@ import style from './ClosestAsteroids.module.css';
 interface ClosestAsteroidsProps {
     distanceUnit: DistanceUnit,
     asteroids: IAsteroid[],
-    setDistanceUnit: (value: SetStateAction<DistanceUnit>) => void
+    setDistanceUnit?: (value: SetStateAction<DistanceUnit>) => void
 }
     
 export const ClosestAsteroids = ({distanceUnit, asteroids, setDistanceUnit }: ClosestAsteroidsProps) => {
@@ -39,7 +39,7 @@ export const ClosestAsteroids = ({distanceUnit, asteroids, setDistanceUnit }: Cl
             <div className={style.header}>
                 <h2>Ближайшие подлёты астероидов</h2>
                 <p className={style.distanceUnits}>
-                    <span className={`${style.distanceUnit} ${distanceUnit===DistanceUnit.KM && style.distanceUnitActive || ''}`} onClick={() => setDistanceUnit(DistanceUnit.KM)}>в километрах</span> | <span className={`${style.distanceUnit} ${distanceUnit===DistanceUnit.LUNAR && style.distanceUnitActive || ''}`} onClick={() => setDistanceUnit(DistanceUnit.LUNAR)}>в лунных орбитах</span>
+                    <span className={`${style.distanceUnit} ${distanceUnit===DistanceUnit.KM && style.distanceUnitActive || ''}`} onClick={() => setDistanceUnit && setDistanceUnit(DistanceUnit.KM)}>в километрах</span> | <span className={`${style.distanceUnit} ${distanceUnit===DistanceUnit.LUNAR && style.distanceUnitActive || ''}`} onClick={() => setDistanceUnit && setDistanceUnit(DistanceUnit.LUNAR)}>в лунных орбитах</span>
                 </p>
             </div>
             {

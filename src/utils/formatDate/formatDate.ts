@@ -1,4 +1,6 @@
 export const formatDate = (date:string, withTime = false) => {
+    if(!new Date(date)) return;
+
     const newDate = new Date(date).toLocaleString('ru-RU', {
         month: 'short',
         year: 'numeric',

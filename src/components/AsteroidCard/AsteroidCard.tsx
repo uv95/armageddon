@@ -1,3 +1,4 @@
+'use client'
 import { DistanceUnit, IAsteroid } from '@/utils/asteroidType';
 import { modifyWord } from '@/utils/numbersDeclension';
 import Image from 'next/image';
@@ -34,7 +35,7 @@ export const AsteroidCard = ({ asteroid, distanceUnit, isOrdered, setIntersectin
     })
 
     return (
-        <div ref={isIntersectionPoint ? ref : null} >
+        <div data-testid='asteroid' ref={isIntersectionPoint ? ref : null} >
             <div className={style.main} onClick={() => router.push(`/${asteroid.id}`)}>
                 <div className={style.date}>{asteroid.approachDate}</div>
                 <div className={style.info}>

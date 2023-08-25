@@ -1,4 +1,6 @@
 export const getDate = (daysAfter: number) => {
+    if(daysAfter < 0) throw new Error('Invalid input') 
+    
     const today = new Date()
     const day = new Date(new Date(today).setDate(new Date(today).getDate() + daysAfter))
 

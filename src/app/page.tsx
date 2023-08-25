@@ -7,7 +7,6 @@ import styles from './page.module.css'
 
 export default async function Home() {
     const data = await getAsteroids(getDate(0), getDate(0));
- 
     return (
         <main className={styles.main}>
             <Earth/>

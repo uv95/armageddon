@@ -11,13 +11,18 @@ describe('getDate', () => {
 
         expect(getDate(0)).toBe(result)
     });
+    
     test('should get tomorrow', () => {
-        const day = new Date().getDate() ;
+        const day = new Date().getDate() + 1;
         const month = new Date().getMonth() + 1;
         const year = new Date().getFullYear();
 
         const result = `${year}-${+month > 9 ? month : `0${month}`}-${+day > 9 ? day : `0${day}`}`;
 
         expect(getDate(1)).toBe(result)
+    });
+
+    test('should throw error', () => {
+        expect(() => getDate(-1)).toThrowError('Invalid input')
     });
 });
